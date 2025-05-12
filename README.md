@@ -95,17 +95,8 @@ Ribbon 필터는 Bloom 필터보다 메모리 사용량을 최대 30% 줄일 수
 - 컴팩션 통계 수집
 - 최종 DB 크기 비교
 
-### ✅ 실험 B. 메모리 절약 성능 비교
 
-```bash
-# Bloom 10 bpk
-./db_bench --bloom_bits=10 --use_ribbon_filter=false ...
-
-# Ribbon 7 bpk
-./db_bench --bloom_bits=7 --use_ribbon_filter=true ...
-```
-
-### ✅ 실험 C. bpk 다이얼 테스트
+### ✅ 실험 B. bpk 다이얼 테스트
 
 ```bash
 # Varying bits-per-key
