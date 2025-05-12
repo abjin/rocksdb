@@ -127,8 +127,7 @@ done
 
 2. **리소스 사용량**:
 
----
-### 1. **fillrandom (랜덤 쓰기)**
+#### 1. **fillrandom (랜덤 쓰기)**
 
 - **CPU 사용량:**
     
@@ -149,7 +148,7 @@ done
 
 ---
 
-### 2. **readrandom (랜덤 읽기)**
+#### 2. **readrandom (랜덤 읽기)**
 
 - **CPU 사용량:**
     
@@ -170,7 +169,7 @@ done
 
 ---
 
-### 3. **readwhilewriting (쓰기 중 읽기)**
+#### 3. **readwhilewriting (쓰기 중 읽기)**
 
 - **CPU 사용량:**
     
