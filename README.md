@@ -128,6 +128,8 @@ done
 
     #### 1. **fillrandom (랜덤 쓰기)**
 
+    ![Fillrandom CPU 및 메모리 사용량](images/fillrandom.png)
+
     - **CPU 사용량:**
         
         - Bloom: **최소 3.08% ~ 최대 6.27%**
@@ -149,6 +151,8 @@ done
 
     #### 2. **readrandom (랜덤 읽기)**
 
+    ![Readrandom CPU 및 메모리 사용량](images/readrandom.png)
+
     - **CPU 사용량:**
         
         - Bloom: **5.56% ~ 8.24%**
@@ -169,6 +173,8 @@ done
 
 
     #### 3. **readwhilewriting (쓰기 중 읽기)**
+
+    ![Readwhilewriting CPU 및 메모리 사용량](images/readwhilewriting.png)
 
     - **CPU 사용량:**
         
