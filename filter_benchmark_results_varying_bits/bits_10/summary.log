@@ -1,0 +1,33 @@
+Bloom 필터 결과 (bits_per_key=10):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     187.917 micros/op 10641 ops/sec 563.814 seconds 6000000 operations;   10.7 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      29.434 micros/op 67836 ops/sec 88.448 seconds 6000000 operations;   59.1 MB/s (2594559 of 3000000 found)
+- readwhilewriting:
+
+Ribbon 필터 결과 (bits_per_key=10):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     189.347 micros/op 10561 ops/sec 568.119 seconds 6000000 operations;   10.6 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      28.597 micros/op 69809 ops/sec 85.948 seconds 6000000 operations;   60.8 MB/s (2594285 of 3000000 found)
+- readwhilewriting:
+
+컴팩션 통계 요약 (bits_per_key=10):
+- Bloom 컴팩션 횟수:
+21
+- Ribbon 컴팩션 횟수:
+21
+
+readwhilewriting 컴팩션 통계:
+- Bloom readwhilewriting 컴팩션 횟수:
+- Ribbon readwhilewriting 컴팩션 횟수:
+
+DB 사이즈 비교 (bits_per_key=10):
+- Bloom DB 사이즈: 2.9G
+- Ribbon DB 사이즈: 2.9G
+
+각 벤치마크별 결과는 filter_benchmark_results_varying_bits/bits_10 디렉토리에 저장되었습니다.

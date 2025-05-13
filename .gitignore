@@ -103,6 +103,6 @@ third-party/folly/
 .cache
 *.sublime-*
 
-ribbon_filter_db
-bloom_filter_db
+ribbon_filter_db*
+bloom_filter_db*
 **/*.sst

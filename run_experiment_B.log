@@ -1,0 +1,340 @@
+======================================================
+bits_per_key = 0 실험 시작
+======================================================
+실험 B: Bloom vs Ribbon 필터 성능 비교 (bits_per_key=0, 컴팩션 최적화)
+시작 시간: Tue May 13 02:36:04 UTC 2025
+
+===== Bloom 필터 fillrandom 벤치마크 시작 (bits_per_key=0) =====
+Bloom fillrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_0/bloom_fillrandom.log
+3분 동안 대기 중...
+===== Ribbon 필터 fillrandom 벤치마크 시작 (bits_per_key=0) =====
+Ribbon fillrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_0/ribbon_fillrandom.log
+3분 동안 대기 중...
+===== Bloom 필터 readrandom 벤치마크 시작 (bits_per_key=0) =====
+Bloom readrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_0/bloom_readrandom.log
+3분 동안 대기 중...
+===== Ribbon 필터 readrandom 벤치마크 시작 (bits_per_key=0) =====
+Ribbon readrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_0/ribbon_readrandom.log
+3분 동안 대기 중...
+===== bits_per_key=0 벤치마크 결과 요약 =====
+Bloom 필터 결과 (bits_per_key=0):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     180.682 micros/op 11065 ops/sec 542.236 seconds 6000000 operations;   11.1 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      32.990 micros/op 60543 ops/sec 99.102 seconds 6000000 operations;   52.7 MB/s (2593861 of 3000000 found)
+- readwhilewriting:
+
+Ribbon 필터 결과 (bits_per_key=0):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     190.149 micros/op 10516 ops/sec 570.528 seconds 6000000 operations;   10.6 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      29.236 micros/op 68272 ops/sec 87.884 seconds 6000000 operations;   59.5 MB/s (2594578 of 3000000 found)
+- readwhilewriting:
+
+컴팩션 통계 요약 (bits_per_key=0):
+- Bloom 컴팩션 횟수:
+21
+- Ribbon 컴팩션 횟수:
+21
+
+readwhilewriting 컴팩션 통계:
+- Bloom readwhilewriting 컴팩션 횟수:
+- Ribbon readwhilewriting 컴팩션 횟수:
+
+DB 사이즈 비교 (bits_per_key=0):
+- Bloom DB 사이즈: 2.9G
+- Ribbon DB 사이즈: 2.9G
+
+각 벤치마크별 결과는 filter_benchmark_results_varying_bits/bits_0 디렉토리에 저장되었습니다.
+
+bits_per_key=0 실험 완료 시간: Tue May 13 03:09:44 UTC 2025
+
+======================================================
+bits_per_key = 5 실험 시작
+======================================================
+실험 B: Bloom vs Ribbon 필터 성능 비교 (bits_per_key=5, 컴팩션 최적화)
+시작 시간: Tue May 13 03:09:44 UTC 2025
+
+===== Bloom 필터 fillrandom 벤치마크 시작 (bits_per_key=5) =====
+Bloom fillrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_5/bloom_fillrandom.log
+3분 동안 대기 중...
+===== Ribbon 필터 fillrandom 벤치마크 시작 (bits_per_key=5) =====
+Ribbon fillrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_5/ribbon_fillrandom.log
+3분 동안 대기 중...
+===== Bloom 필터 readrandom 벤치마크 시작 (bits_per_key=5) =====
+Bloom readrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_5/bloom_readrandom.log
+3분 동안 대기 중...
+===== Ribbon 필터 readrandom 벤치마크 시작 (bits_per_key=5) =====
+Ribbon readrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_5/ribbon_readrandom.log
+3분 동안 대기 중...
+===== bits_per_key=5 벤치마크 결과 요약 =====
+Bloom 필터 결과 (bits_per_key=5):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     182.564 micros/op 10951 ops/sec 547.871 seconds 6000000 operations;   11.0 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      33.289 micros/op 60071 ops/sec 99.881 seconds 6000000 operations;   52.3 MB/s (2591916 of 3000000 found)
+- readwhilewriting:
+
+Ribbon 필터 결과 (bits_per_key=5):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     186.525 micros/op 10721 ops/sec 559.637 seconds 6000000 operations;   10.8 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      32.568 micros/op 61369 ops/sec 97.768 seconds 6000000 operations;   53.4 MB/s (2593536 of 3000000 found)
+- readwhilewriting:
+
+컴팩션 통계 요약 (bits_per_key=5):
+- Bloom 컴팩션 횟수:
+21
+- Ribbon 컴팩션 횟수:
+21
+
+readwhilewriting 컴팩션 통계:
+- Bloom readwhilewriting 컴팩션 횟수:
+- Ribbon readwhilewriting 컴팩션 횟수:
+
+DB 사이즈 비교 (bits_per_key=5):
+- Bloom DB 사이즈: 2.8G
+- Ribbon DB 사이즈: 2.9G
+
+각 벤치마크별 결과는 filter_benchmark_results_varying_bits/bits_5 디렉토리에 저장되었습니다.
+
+bits_per_key=5 실험 완료 시간: Tue May 13 03:43:30 UTC 2025
+
+======================================================
+bits_per_key = 10 실험 시작
+======================================================
+실험 B: Bloom vs Ribbon 필터 성능 비교 (bits_per_key=10, 컴팩션 최적화)
+시작 시간: Tue May 13 03:43:30 UTC 2025
+
+===== Bloom 필터 fillrandom 벤치마크 시작 (bits_per_key=10) =====
+Bloom fillrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_10/bloom_fillrandom.log
+3분 동안 대기 중...
+===== Ribbon 필터 fillrandom 벤치마크 시작 (bits_per_key=10) =====
+Ribbon fillrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_10/ribbon_fillrandom.log
+3분 동안 대기 중...
+===== Bloom 필터 readrandom 벤치마크 시작 (bits_per_key=10) =====
+Bloom readrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_10/bloom_readrandom.log
+3분 동안 대기 중...
+===== Ribbon 필터 readrandom 벤치마크 시작 (bits_per_key=10) =====
+Ribbon readrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_10/ribbon_readrandom.log
+3분 동안 대기 중...
+===== bits_per_key=10 벤치마크 결과 요약 =====
+Bloom 필터 결과 (bits_per_key=10):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     187.917 micros/op 10641 ops/sec 563.814 seconds 6000000 operations;   10.7 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      29.434 micros/op 67836 ops/sec 88.448 seconds 6000000 operations;   59.1 MB/s (2594559 of 3000000 found)
+- readwhilewriting:
+
+Ribbon 필터 결과 (bits_per_key=10):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     189.347 micros/op 10561 ops/sec 568.119 seconds 6000000 operations;   10.6 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      28.597 micros/op 69809 ops/sec 85.948 seconds 6000000 operations;   60.8 MB/s (2594285 of 3000000 found)
+- readwhilewriting:
+
+컴팩션 통계 요약 (bits_per_key=10):
+- Bloom 컴팩션 횟수:
+21
+- Ribbon 컴팩션 횟수:
+21
+
+readwhilewriting 컴팩션 통계:
+- Bloom readwhilewriting 컴팩션 횟수:
+- Ribbon readwhilewriting 컴팩션 횟수:
+
+DB 사이즈 비교 (bits_per_key=10):
+- Bloom DB 사이즈: 2.9G
+- Ribbon DB 사이즈: 2.9G
+
+각 벤치마크별 결과는 filter_benchmark_results_varying_bits/bits_10 디렉토리에 저장되었습니다.
+
+bits_per_key=10 실험 완료 시간: Tue May 13 04:17:17 UTC 2025
+
+======================================================
+bits_per_key = 15 실험 시작
+======================================================
+실험 B: Bloom vs Ribbon 필터 성능 비교 (bits_per_key=15, 컴팩션 최적화)
+시작 시간: Tue May 13 04:17:17 UTC 2025
+
+===== Bloom 필터 fillrandom 벤치마크 시작 (bits_per_key=15) =====
+Bloom fillrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_15/bloom_fillrandom.log
+3분 동안 대기 중...
+===== Ribbon 필터 fillrandom 벤치마크 시작 (bits_per_key=15) =====
+Ribbon fillrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_15/ribbon_fillrandom.log
+3분 동안 대기 중...
+===== Bloom 필터 readrandom 벤치마크 시작 (bits_per_key=15) =====
+Bloom readrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_15/bloom_readrandom.log
+3분 동안 대기 중...
+===== Ribbon 필터 readrandom 벤치마크 시작 (bits_per_key=15) =====
+Ribbon readrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_15/ribbon_readrandom.log
+3분 동안 대기 중...
+===== bits_per_key=15 벤치마크 결과 요약 =====
+Bloom 필터 결과 (bits_per_key=15):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     193.409 micros/op 10229 ops/sec 586.511 seconds 6000000 operations;   10.3 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      28.059 micros/op 71241 ops/sec 84.220 seconds 6000000 operations;   62.0 MB/s (2593309 of 3000000 found)
+- readwhilewriting:
+
+Ribbon 필터 결과 (bits_per_key=15):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     193.391 micros/op 10340 ops/sec 580.235 seconds 6000000 operations;   10.4 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      29.956 micros/op 66653 ops/sec 90.017 seconds 6000000 operations;   58.0 MB/s (2593531 of 3000000 found)
+- readwhilewriting:
+
+컴팩션 통계 요약 (bits_per_key=15):
+- Bloom 컴팩션 횟수:
+21
+- Ribbon 컴팩션 횟수:
+21
+
+readwhilewriting 컴팩션 통계:
+- Bloom readwhilewriting 컴팩션 횟수:
+- Ribbon readwhilewriting 컴팩션 횟수:
+
+DB 사이즈 비교 (bits_per_key=15):
+- Bloom DB 사이즈: 2.9G
+- Ribbon DB 사이즈: 2.9G
+
+각 벤치마크별 결과는 filter_benchmark_results_varying_bits/bits_15 디렉토리에 저장되었습니다.
+
+bits_per_key=15 실험 완료 시간: Tue May 13 04:51:39 UTC 2025
+
+======================================================
+bits_per_key = 20 실험 시작
+======================================================
+실험 B: Bloom vs Ribbon 필터 성능 비교 (bits_per_key=20, 컴팩션 최적화)
+시작 시간: Tue May 13 04:51:39 UTC 2025
+
+===== Bloom 필터 fillrandom 벤치마크 시작 (bits_per_key=20) =====
+Bloom fillrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_20/bloom_fillrandom.log
+3분 동안 대기 중...
+===== Ribbon 필터 fillrandom 벤치마크 시작 (bits_per_key=20) =====
+Ribbon fillrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_20/ribbon_fillrandom.log
+3분 동안 대기 중...
+===== Bloom 필터 readrandom 벤치마크 시작 (bits_per_key=20) =====
+Bloom readrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_20/bloom_readrandom.log
+3분 동안 대기 중...
+===== Ribbon 필터 readrandom 벤치마크 시작 (bits_per_key=20) =====
+Ribbon readrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_20/ribbon_readrandom.log
+3분 동안 대기 중...
+===== bits_per_key=20 벤치마크 결과 요약 =====
+Bloom 필터 결과 (bits_per_key=20):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     197.783 micros/op 10017 ops/sec 598.929 seconds 6000000 operations;   10.1 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      33.200 micros/op 60125 ops/sec 99.791 seconds 6000000 operations;   52.4 MB/s (2594492 of 3000000 found)
+- readwhilewriting:
+
+Ribbon 필터 결과 (bits_per_key=20):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     197.145 micros/op 10142 ops/sec 591.598 seconds 6000000 operations;   10.2 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      34.861 micros/op 57310 ops/sec 104.693 seconds 6000000 operations;   49.9 MB/s (2593122 of 3000000 found)
+- readwhilewriting:
+
+컴팩션 통계 요약 (bits_per_key=20):
+- Bloom 컴팩션 횟수:
+21
+- Ribbon 컴팩션 횟수:
+21
+
+readwhilewriting 컴팩션 통계:
+- Bloom readwhilewriting 컴팩션 횟수:
+- Ribbon readwhilewriting 컴팩션 횟수:
+
+DB 사이즈 비교 (bits_per_key=20):
+- Bloom DB 사이즈: 2.9G
+- Ribbon DB 사이즈: 2.9G
+
+각 벤치마크별 결과는 filter_benchmark_results_varying_bits/bits_20 디렉토리에 저장되었습니다.
+
+bits_per_key=20 실험 완료 시간: Tue May 13 05:26:55 UTC 2025
+
+======================================================
+bits_per_key = 25 실험 시작
+======================================================
+실험 B: Bloom vs Ribbon 필터 성능 비교 (bits_per_key=25, 컴팩션 최적화)
+시작 시간: Tue May 13 05:26:55 UTC 2025
+
+===== Bloom 필터 fillrandom 벤치마크 시작 (bits_per_key=25) =====
+Bloom fillrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_25/bloom_fillrandom.log
+3분 동안 대기 중...
+===== Ribbon 필터 fillrandom 벤치마크 시작 (bits_per_key=25) =====
+Ribbon fillrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_25/ribbon_fillrandom.log
+3분 동안 대기 중...
+===== Bloom 필터 readrandom 벤치마크 시작 (bits_per_key=25) =====
+Bloom readrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_25/bloom_readrandom.log
+3분 동안 대기 중...
+===== Ribbon 필터 readrandom 벤치마크 시작 (bits_per_key=25) =====
+Ribbon readrandom 완료. 결과: filter_benchmark_results_varying_bits/bits_25/ribbon_readrandom.log
+3분 동안 대기 중...
+===== bits_per_key=25 벤치마크 결과 요약 =====
+Bloom 필터 결과 (bits_per_key=25):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     195.209 micros/op 10244 ops/sec 585.658 seconds 6000000 operations;   10.3 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      28.800 micros/op 69364 ops/sec 86.499 seconds 6000000 operations;   60.4 MB/s (2593415 of 3000000 found)
+- readwhilewriting:
+
+Ribbon 필터 결과 (bits_per_key=25):
+- fillrandom:
+Read rate: 0 ops/second
+fillrandom   :     195.364 micros/op 10237 ops/sec 586.102 seconds 6000000 operations;   10.3 MB/s
+- readrandom:
+Read rate: 0 ops/second
+readrandom   :      50.954 micros/op 39241 ops/sec 152.900 seconds 6000000 operations;   34.2 MB/s (2593648 of 3000000 found)
+- readwhilewriting:
+
+컴팩션 통계 요약 (bits_per_key=25):
+- Bloom 컴팩션 횟수:
+21
+- Ribbon 컴팩션 횟수:
+21
+
+readwhilewriting 컴팩션 통계:
+- Bloom readwhilewriting 컴팩션 횟수:
+- Ribbon readwhilewriting 컴팩션 횟수:
+
+DB 사이즈 비교 (bits_per_key=25):
+- Bloom DB 사이즈: 2.9G
+- Ribbon DB 사이즈: 2.9G
+
+각 벤치마크별 결과는 filter_benchmark_results_varying_bits/bits_25 디렉토리에 저장되었습니다.
+
+bits_per_key=25 실험 완료 시간: Tue May 13 06:02:27 UTC 2025
+
+======================================================
+모든 bits_per_key 값에 대한 종합 요약
+======================================================
+종합 결과가 filter_benchmark_results_varying_bits/final_summary.csv 파일에 저장되었습니다.
+이 CSV 파일을 스프레드시트 프로그램에서 열어 그래프를 생성할 수 있습니다.
+======================================================
+모든 bits_per_key 실험이 완료되었습니다.
+실험 완료 시간: Tue May 13 06:02:27 UTC 2025
+결과는 filter_benchmark_results_varying_bits 디렉토리에 저장되었습니다.
+======================================================

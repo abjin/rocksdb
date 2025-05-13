@@ -1,0 +1,21 @@
+rocksdb.compaction.key.drop.new COUNT : 2550272
+rocksdb.compaction.key.drop.obsolete COUNT : 0
+rocksdb.compaction.key.drop.range_del COUNT : 0
+rocksdb.compaction.key.drop.user COUNT : 0
+rocksdb.compaction.range_del.drop.obsolete COUNT : 0
+rocksdb.compaction.optimized.del.drop.obsolete COUNT : 0
+rocksdb.compaction.cancelled COUNT : 0
+rocksdb.compaction.total.time.cpu_micros COUNT : 460228333
+rocksdb.fifo.max.size.compactions COUNT : 0
+rocksdb.fifo.ttl.compactions COUNT : 0
+rocksdb.fifo.change_temperature.compactions COUNT : 0
+rocksdb.compaction.times.micros P50 : 278888.888889 P95 : 11577749.000000 P99 : 11577749.000000 P100 : 11577749.000000 COUNT : 252 SUM : 572941113
+rocksdb.compaction.times.cpu_micros P50 : 171739.130435 P95 : 7028000.000000 P99 : 7550758.000000 P100 : 7550758.000000 COUNT : 252 SUM : 369268649
+rocksdb.subcompaction.setup.times.micros P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.compaction.outfile.sync.micros P50 : 18125.094197 P95 : 33486.111111 P99 : 46919.444444 P100 : 58846.000000 COUNT : 6045 SUM : 115122262
+rocksdb.read.block.compaction.micros P50 : 12.343720 P95 : 19.720087 P99 : 52.109096 P100 : 20428.000000 COUNT : 14275594 SUM : 183641504
+rocksdb.numfiles.in.singlecompaction P50 : 2.166667 P95 : 126.105263 P99 : 158.000000 P100 : 158.000000 COUNT : 278 SUM : 6455
+rocksdb.file.read.compaction.micros P50 : 4.993051 P95 : 9.428780 P99 : 28.009410 P100 : 19584.000000 COUNT : 14305820 SUM : 86214761
+rocksdb.file.write.compaction.micros P50 : 1.784619 P95 : 3.143405 P99 : 16.907035 P100 : 17739.000000 COUNT : 27330345 SUM : 113365708
+rocksdb.num.subcompactions.scheduled P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
+rocksdb.compaction.prefetch.bytes P50 : 0.000000 P95 : 0.000000 P99 : 0.000000 P100 : 0.000000 COUNT : 0 SUM : 0
