@@ -60,10 +60,14 @@ Ribbon 필터는 Bloom 필터보다 메모리 사용량을 최대 30% 줄일 수
 
 ## 🖥️ 3. 실험 명령어
 
-### 🔧 공통 설정
+### ✅ 실험 A. Bloom vs Ribbon 기본 비교
+
 
 ```bash
+# 🔧 공통 옵션
+--db=${db_path}
 --num=5000000 \
+--bloom_bits=10
 --value_size=1024 \
 --key_size=32 \
 --threads=2 \
@@ -72,17 +76,36 @@ Ribbon 필터는 Bloom 필터보다 메모리 사용량을 최대 30% 줄일 수
 --target_file_size_base=8388608 \
 --compression_type=none \
 --statistics \
---report_bg_io_stats=true
+--report_bg_io_stats=true\
 ```
 
-### ✅ 실험 A. Bloom vs Ribbon 기본 비교
-
 ```bash
-# Bloom Filter
-./db_bench --bloom_bits=10 --use_ribbon_filter=false --db=bloom_filter_db --benchmarks=fillrandom
+# Bloom Filter (DB 경로: ./bloom_filter_db)
+# 1. 데이터 삽입 (fillrandom)
+./db_bench --use_ribbon_filter=false --benchmarks=fillrandom --use_existing_db=0 \
+  [...공통 옵션들...]
 
-# Ribbon Filter
-./db_bench --bloom_bits=10 --use_ribbon_filter=true --db=ribbon_filter_db --benchmarks=fillrandom
+# 2. 무작위 읽기 (readrandom)
+./db_bench --use_ribbon_filter=false --benchmarks=readrandom --use_existing_db=1 \
+  [...공통 옵션들...]
+
+# 3. 쓰기 중 읽기 (readwhilewriting)
+./db_bench --use_ribbon_filter=false --benchmarks=readwhilewriting --use_existing_db=1 \
+  [...공통 옵션들...]
+
+
+# Ribbon Filter (DB 경로: ./ribbon_filter_db)
+# 1. 데이터 삽입 (fillrandom)
+./db_bench --use_ribbon_filter=true --benchmarks=fillrandom --use_existing_db=0 \
+  [...공통 옵션들...] # 예: --num=5000000 --value_size=1024 ...
+
+# 2. 무작위 읽기 (readrandom)
+./db_bench --use_ribbon_filter=true --benchmarks=readrandom --use_existing_db=1 \
+  [...공통 옵션들...]
+
+# 3. 쓰기 중 읽기 (readwhilewriting)
+./db_bench --use_ribbon_filter=true --benchmarks=readwhilewriting --use_existing_db=1 \
+  [...공통 옵션들...]
 ```
 
 각 필터 타입 별로 다음 벤치마크를 순차적으로 실행:
@@ -99,9 +122,45 @@ Ribbon 필터는 Bloom 필터보다 메모리 사용량을 최대 30% 줄일 수
 ### ✅ 실험 B. bpk 다이얼 테스트
 
 ```bash
-# Varying bits-per-key
-for bpk in 5 7 10 12; do
-  ./db_bench --bloom_bits=$bpk --use_ribbon_filter=false ...
+# 🔧 공통 옵션
+--db=${db_path}
+--num=3000000 \
+--bloom_bits=10
+--value_size=1024 \
+--key_size=32 \
+--threads=2 \
+--block_size=4096 \
+--write_buffer_size=8388608 \
+--target_file_size_base=8388608 \
+--compression_type=none \
+--statistics \
+--report_bg_io_stats=true\
+```
+
+```bash
+# 다이얼 테스트
+for bpk in 0 5 10 15 20 25; do
+    # Bloom Filter
+    ./db_bench --bloom_bits=$bpk --use_ribbon_filter=false \ 
+    --use_existing_db=0 \
+    --benchmarks=fillrandom \
+    [...공통 옵션들...]
+
+    ./db_bench --bloom_bits=$bpk --use_ribbon_filter=false \
+    --use_existing_db=1 \
+    --benchmarks=readrandom \
+    [...공통 옵션들...]
+
+    # Ribbon Filter
+    ./db_bench --bloom_bits=$bpk --use_ribbon_filter=true \ 
+    --use_existing_db=0 \
+    --benchmarks=fillrandom \
+    [...공통 옵션들...]
+
+    ./db_bench --bloom_bits=$bpk --use_ribbon_filter=true \
+    --use_existing_db=1 \
+    --benchmarks=readrandom \
+    [...공통 옵션들...]
 done
 ```
 
